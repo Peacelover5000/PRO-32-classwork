@@ -13,10 +13,10 @@ class Boat {
     this.height = height;
 
     this.boatPosition = boatPos;
-    this.image = loadImage("assets/boat.png");
+    this.isBroken = false;
+
     World.add(world, this.body);
   }
-
   animate() {
     this.speed += 0.05 % 1.1;
   }
@@ -37,7 +37,7 @@ class Boat {
     var angle = this.body.angle;
     var pos = this.body.position;
     var index = floor(this.speed % this.animation.length);
-    
+
     push();
     translate(pos.x, pos.y);
     rotate(angle);
